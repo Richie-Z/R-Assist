@@ -5,6 +5,8 @@ import (
 	"strings"
 
 	"github.com/richie-z/whatsapp-bot/internal/commands/halo"
+	"github.com/richie-z/whatsapp-bot/internal/commands/help"
+	"github.com/richie-z/whatsapp-bot/internal/commands/ingatkan"
 	"github.com/richie-z/whatsapp-bot/internal/service"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/types/events"
@@ -40,12 +42,17 @@ func (h *Handler) handleTextMessage(evt *events.Message) {
 		args = parts[1]
 	}
 
-	fmt.Printf("%s command received: %s", cmd, args)
+	fmt.Printf("%s command received: %s \n", cmd, args)
 
 	switch cmd {
 	case "!halo":
 		halo.Run(h.client, evt, args)
+	case "!ingatkan", "!ingatin":
+		ingatkan.Run(h.client, evt, args)
+	case "!help", "!tolong":
+		help.Run(h.client, evt, args)
 	default:
 		service.SendReply(h.client, evt.Info.Sender, "Perintah tidak dikenal")
+		help.Run(h.client, evt, args)
 	}
 }

@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/richie-z/whatsapp-bot/internal/commands/halo"
+	"github.com/richie-z/whatsapp-bot/internal/service"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/types/events"
 )
@@ -42,6 +43,6 @@ func (h *Handler) handleTextMessage(evt *events.Message) {
 	case "!halo":
 		halo.Run(h.client, evt, args)
 	default:
-		SendReply(h.client, evt.Info.Sender, "Perintah tidak dikenal 🤔")
+		service.SendReply(h.client, evt.Info.Sender, "Perintah tidak dikenal 🤔")
 	}
 }

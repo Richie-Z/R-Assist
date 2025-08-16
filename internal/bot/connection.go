@@ -2,9 +2,12 @@ package bot
 
 import (
 	"context"
+	"fmt"
 	"os"
+	"time"
 
 	"github.com/mdp/qrterminal"
+	"github.com/richie-z/whatsapp-bot/internal/service"
 	"github.com/richie-z/whatsapp-bot/internal/storage"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/store/sqlstore"
@@ -14,6 +17,8 @@ import (
 )
 
 func NewConnection() *whatsmeow.Client {
+	loc, _ := time.LoadLocation("Asia/Jakarta")
+
 	dbLog := waLog.Stdout("DB", "INFO", true)
 	container, err := sqlstore.New(context.Background(), "sqlite3", "file:store.db?_foreign_keys=on", dbLog)
 	if err != nil {
@@ -52,5 +57,12 @@ func NewConnection() *whatsmeow.Client {
 			panic(err)
 		}
 	}
+
+	// scheduler
+	sched := service.NewScheduler(client, loc)
+	sched.Start()
+	fmt.Println("scheduler should start")
+	defer sched.Stop()
+
 	return client
 }

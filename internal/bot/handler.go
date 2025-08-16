@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/richie-z/whatsapp-bot/internal/commands/halo"
@@ -39,10 +40,12 @@ func (h *Handler) handleTextMessage(evt *events.Message) {
 		args = parts[1]
 	}
 
+	fmt.Printf("%s command received: %s", cmd, args)
+
 	switch cmd {
 	case "!halo":
 		halo.Run(h.client, evt, args)
 	default:
-		service.SendReply(h.client, evt.Info.Sender, "Perintah tidak dikenal 🤔")
+		service.SendReply(h.client, evt.Info.Sender, "Perintah tidak dikenal")
 	}
 }

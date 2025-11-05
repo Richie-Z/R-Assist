@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/richie-z/whatsapp-bot/internal/bot"
+	"github.com/richie-z/R-Assist/internal/bot"
 )
 
 func main() {

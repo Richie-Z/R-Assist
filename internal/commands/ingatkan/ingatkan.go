@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/richie-z/whatsapp-bot/internal/service"
+	"github.com/richie-z/R-Assist/internal/service"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/types/events"
 )

@@ -1,4 +1,4 @@
-module github.com/richie-z/whatsapp-bot
+module github.com/richie-z/R-Assist
 
 go 1.24.6
 

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/richie-z/whatsapp-bot/internal/commands/halo"
-	"github.com/richie-z/whatsapp-bot/internal/commands/help"
-	"github.com/richie-z/whatsapp-bot/internal/commands/ingatkan"
-	"github.com/richie-z/whatsapp-bot/internal/service"
+	"github.com/richie-z/R-Assist/internal/commands/halo"
+	"github.com/richie-z/R-Assist/internal/commands/help"
+	"github.com/richie-z/R-Assist/internal/commands/ingatkan"
+	"github.com/richie-z/R-Assist/internal/service"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/types/events"
 )

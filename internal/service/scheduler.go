@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/richie-z/whatsapp-bot/internal/storage"
+	"github.com/richie-z/R-Assist/internal/storage"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/binary/proto"
 	"go.mau.fi/whatsmeow/types"

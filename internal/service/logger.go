@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/richie-z/whatsapp-bot/internal/storage"
+	"github.com/richie-z/R-Assist/internal/storage"
 )
 
 func LogMessage(sender, message string, reply string) error {

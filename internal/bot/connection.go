@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/mdp/qrterminal"
-	"github.com/richie-z/whatsapp-bot/internal/service"
-	"github.com/richie-z/whatsapp-bot/internal/storage"
+	"github.com/richie-z/R-Assist/internal/service"
+	"github.com/richie-z/R-Assist/internal/storage"
 	"go.mau.fi/whatsmeow"
 	"go.mau.fi/whatsmeow/store/sqlstore"
 	waLog "go.mau.fi/whatsmeow/util/log"
